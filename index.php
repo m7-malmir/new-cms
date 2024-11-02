@@ -1,5 +1,5 @@
 <?php
-//php file is clear on is on
+//php file is clear on is on salam
 function URL($key = null){ 
      $arr=explode("/",trim($_GET['url']?? 'home',"/"));
      if(!is_numeric($key))
