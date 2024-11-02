@@ -1,5 +1,5 @@
 <?php
-//last last last
+//last last last dhssfghdfgh
 function URL($key = null){ 
      $arr=explode("/",trim($_GET['url']?? 'home',"/"));
      if(!is_numeric($key))
