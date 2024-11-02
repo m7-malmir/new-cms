@@ -1,6 +1,6 @@
 <?php require_once 'up-header.php';
 //print_r(password_verify());
-
+//sprintf like for web broser
 
 ?>
 
