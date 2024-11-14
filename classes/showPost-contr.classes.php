@@ -27,4 +27,4 @@ class ShowPostContr extends ShowPost{
         return $result;
        }
 }
-//change 23:03
+//change 00:19
