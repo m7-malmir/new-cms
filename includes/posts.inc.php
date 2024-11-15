@@ -9,8 +9,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $id=filter_var($_POST['id'],FILTER_SANITIZE_NUMBER_INT);
     $title=htmlspecialchars($_POST["title"],ENT_QUOTES,'UTF-8');
     $body=htmlspecialchars($_POST["body"],ENT_QUOTES,'UTF-8');
-    $postsrc=$_FILES['postsrc'];
-    $previous_thumbnail_name=filter_var($_POST['previous_thumbnail_name'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    //$postsrc=$_FILES['postsrc'];
+    //$previous_thumbnail_name=filter_var($_POST['previous_thumbnail_name'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 
     $profileinfo=new ShowPostContr($id);
