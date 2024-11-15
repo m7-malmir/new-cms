@@ -7,10 +7,9 @@ class ShowPost extends Dbh{
         $row=$stmt->fetchAll();
         return $row;
     }
-    protected function setNewPost($posttitle,$postcontent,$postsrc,$id){
-       
-        $stmt=$this->connect()->prepare('UPDATE `product` SET `title`=?,`body`=?, `src1`=? WHERE `id`=?;');
-        if(!$stmt->execute(array($posttitle,$postcontent,$postsrc,$id))){
+    protected function setNewPost($posttitle,$postcontent,$id){
+        $stmt=$this->connect()->prepare('UPDATE `product` SET `title`=?,`body`=? WHERE `id`=?;');
+        if(!$stmt->execute(array($posttitle,$postcontent,$id))){
             $stmt= null;
             header("location: profile.php?error=stmtfailed");
             exit();

@@ -1,4 +1,7 @@
 <?php
+include '../classes/dbh.classes.php';
+include '../classes/showPost.classes.php';
+include '../classes/showPost-contr.classes.php';
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // var_dump($_POST);
@@ -9,13 +12,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $postsrc=$_FILES['postsrc'];
     $previous_thumbnail_name=filter_var($_POST['previous_thumbnail_name'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-    include '../classes/dbh.classes.php';
-    include '../classes/showPost.classes.php';
-    include '../classes/showPost-contr.classes.php';
+
     $profileinfo=new ShowPostContr($id);
     $profileinfo->updatePostInfo($title,$body, $postsrc);
     $_SESSION['edit_post']='پست مورد نظر با موفقیت ویرایش شد';
-
 
     header("location:../manage/profile");
 }
