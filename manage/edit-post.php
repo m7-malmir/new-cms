@@ -1,5 +1,4 @@
 <?php
-
 include './header.php';
 require_once '../classes/showdetail.classes.php';
 if(isset($_GET['id'])){
@@ -22,6 +21,7 @@ foreach ($fo as $key => $post) :
 <?php //endif ?>
     <h3>ویرایش پست</h3>
     <form action="<?= ROOT_URL ?>includes/posts.inc.php" method="post" enctype="multipart/form-data" class="contact__form">
+    <input type="hidden" name="previous_thumbnail_name" value="<?= $post['src1'] ?>">
     <div class="form__name">
         <input type="hidden" name="id" value="<?= $post['id'] ?>">
     </div>
@@ -32,6 +32,9 @@ foreach ($fo as $key => $post) :
     </div>
     <div class="form__name">
     <textarea rows="4" name="body" cols="50" placeholder="توضیحات"><?= $post['body'] ?></textarea><br/>
+    </div>
+    <div class="form__name">
+        <input type="file" name="postsrc"><br/>
     </div>
     <input type="submit" name="submit" value="ثبت ویرایش"><br/> 
     </form>
