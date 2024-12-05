@@ -19,13 +19,50 @@ include './header.php';
  
         <input type="checkbox" name="is_featured" id="is_featured" value="1" checked>
         <label for="is_featured">در ابتدای همه محصولات نمایش داده شود</label><br>
+          <div class="row">
+            <div class="col-md-6">
+              <p>تصویر اصلی محصول</p>
+              <input type="file" name="thumbnail1" id="thumbnail1">
+            </div>
+            <div class="col-md-6">
+              <p>کلمه کلیدی مرتبط با تصویر اصلی</p>
+              <input type="text" placeholder="کلمه کلیدی اول, کلمه کلیدی دوم, کلمه کلیدی سوم" name="keyword1" id="thumbnail1">
+            </div>
+          </div><!--row-->
+          <div class="row">
+            <div class="col-md-6">
+            <p>تصویر دوم محصول</p>
+            <input type="file" name="thumbnail2" id="thumbnail2">
+            </div>
+            <div class="col-md-6">
+              <p>کلمه کلیدی مرتبط با تصویر دوم</p>
+              <input type="text" name="keyword2" id="thumbnail2">
+            </div>
+          </div><!--row-->
+          <div class="row">
+            <div class="col-md-6">
+            <p>تصویر سوم محصول</p>
+            <input type="file" name="thumbnail3" id="thumbnail3">
+            </div>
+            <div class="col-md-6">
+              <p>کلمه کلیدی مرتبط با تصویر سوم</p>
+              <input type="text" name="keyword3" id="thumbnail3">
+            </div>
+          </div><!--row-->
+          <div class="row">
+            <div class="col-md-6">
+            <p>تصویر چهارم محصول</p>
+            <input type="file" name="thumbnail4" id="thumbnail4">
+            </div>
+            <div class="col-md-6">
+              <p>کلمه کلیدی مرتبط با تصویر چهارم</p>
+              <input type="text" name="keyword4" id="thumbnail4">
+            </div>
+          </div><!--row-->
 
-        <p>تصویر اصلی محصول</p>
-        <input type="file" name="thumbnail1" id="thumbnail1"><br/>
-        <p>تصویر دوم محصول</p>
-        <input type="file" name="thumbnail2" id="thumbnail2"><br/>
-        <p>تصویر سوم محصول</p>
-        <input type="file" name="thumbnail3" id="thumbnail3"><br/>
+        
+        
+        
         <input type="submit" name="submit" value="Add Post"><br/>   
         </form> 
     </div>
