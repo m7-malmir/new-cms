@@ -13,12 +13,12 @@ include './header.php';
             ?>
           </p>
           <?php endif ?>
-        <form action="<?= ROOT_URL ?>admin/add-post-logic.php" enctype="multipart/form-data" method="post">
+        <form action="<?= ROOT_URL ?>includes/addpr.inc.php" method="POST" enctype="multipart/form-data">
         <input type="text" name="title" placeholder="نام کالا"><br/>
         <textarea rows="4" cols="50" name="body" placeholder="محتوای مربوط به کالا ..."></textarea><br/>
- 
         <input type="checkbox" name="is_featured" id="is_featured" value="1" checked>
         <label for="is_featured">در ابتدای همه محصولات نمایش داده شود</label><br>
+
           <div class="row">
             <div class="col-md-6">
               <p>تصویر اصلی محصول</p>
@@ -26,9 +26,10 @@ include './header.php';
             </div>
             <div class="col-md-6">
               <p>کلمه کلیدی مرتبط با تصویر اصلی</p>
-              <input type="text" placeholder="کلمه کلیدی اول, کلمه کلیدی دوم, کلمه کلیدی سوم" name="keyword1" id="thumbnail1">
+              <input type="text" placeholder="کلمه کلیدی اول, کلمه کلیدی دوم, کلمه کلیدی سوم" name="keyword1" id="">
             </div>
           </div><!--row-->
+
           <div class="row">
             <div class="col-md-6">
             <p>تصویر دوم محصول</p>
@@ -36,7 +37,7 @@ include './header.php';
             </div>
             <div class="col-md-6">
               <p>کلمه کلیدی مرتبط با تصویر دوم</p>
-              <input type="text" name="keyword2" id="thumbnail2">
+              <input type="text" name="keyword2" id="">
             </div>
           </div><!--row-->
           <div class="row">
@@ -46,7 +47,7 @@ include './header.php';
             </div>
             <div class="col-md-6">
               <p>کلمه کلیدی مرتبط با تصویر سوم</p>
-              <input type="text" name="keyword3" id="thumbnail3">
+              <input type="text" name="keyword3" id="">
             </div>
           </div><!--row-->
           <div class="row">
@@ -56,7 +57,7 @@ include './header.php';
             </div>
             <div class="col-md-6">
               <p>کلمه کلیدی مرتبط با تصویر چهارم</p>
-              <input type="text" name="keyword4" id="thumbnail4">
+              <input type="text" name="keyword4" id="">
             </div>
           </div><!--row-->
 

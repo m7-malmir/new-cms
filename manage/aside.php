@@ -13,11 +13,11 @@
 ?>
             <aside> 
                 <div class="sidebar">
-                    <a href="add-post"><i class="uil uil-plus"></i>
-                     <h4>افزودن پست</h4>
+                    <a href="add-product"><i class="uil uil-plus"></i>
+                     <h4>افزودن محصول</h4>
                     </a>
                     <a href="profile" class="<?= $post_export ?? null ?>"><i class="uil uil-postcard"></i>
-                     <h4>مدیریت پست ها</h4>
+                     <h4>مدیریت محصولات </h4>
                     </a>
                     
                     <a href="edit-contact"><i class="uil uil-edit"></i>

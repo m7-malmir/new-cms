@@ -1,23 +1,15 @@
 <?php
 
-class ShowProductContr extends ShowProduct{
-    private $postid;
+class FileUploader {
     private $allowedTypes = ['image/jpeg', 'image/png'];
     private $maxSize = 2 * 1024 * 1024; // 2MB
     private $uploadDir = 'uploads/';
-
-
-    public function __construct($postid){
-        $this->postid=$postid; 
-    }
-    public function showProduct(){
-        return $this->getProductInfo();
-    }
 
     public function upload($file) {
         if ($file['error'] !== UPLOAD_ERR_OK) {
             throw new Exception("خطا در آپلود فایل: " . $file['error']);
         }
+
         $fileType = mime_content_type($file['tmp_name']);
         $fileSize = $file['size'];
         $fileName = basename($file['name']);
@@ -41,22 +33,5 @@ class ShowProductContr extends ShowProduct{
         }
 
         return $uploadPath; // مسیر فایل ذخیره‌شده
-    }
-
-
-
-    protected function newProduct($prtitle,$prcontent,$prsrc1,$prkey1,$prsrc2,$prkey2,$prsrc3,$prkey3,$prsrc4,$prkey4,$feature){
-        
-
-
-
-
-
-
-
-
-
-
-         $this->setNewProduct($prtitle,$prcontent,$prsrc1,$prkey1,$prsrc2,$prkey2,$prsrc3,$prkey3,$prsrc4,$prkey4,$feature);
     }
 }
