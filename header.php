@@ -59,7 +59,7 @@
                     <img src="<?= ROOT_URL .'/img/amini.jpg'?>" alt="">
                
                 <ul id="hidden">
-                    <li>آقای امینی</li>
+                    <li><a href="<?= ROOT_URL ?>manage/profile">داشبورد</a></li>
                     <li><a href="<?= ROOT_URL ?>includes/logout.inc.php">خروج</a></li>
                 </ul>  
             </li>

@@ -13,6 +13,15 @@ include './header.php';
             ?>
           </p>
           <?php endif ?>
+
+ <?php if (isset($_SESSION['error'])) {
+  
+    echo "<p class='su-alert'>";
+    echo htmlspecialchars($_SESSION['error']);
+    echo "</p>";
+    unset($_SESSION['error']);
+}
+?>
         <form action="<?= ROOT_URL ?>includes/addpr.inc.php" method="POST" enctype="multipart/form-data">
         <input type="text" name="title" placeholder="نام کالا"><br/>
         <textarea rows="4" cols="50" name="body" placeholder="محتوای مربوط به کالا ..."></textarea><br/>

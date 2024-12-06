@@ -1,12 +1,12 @@
 <?php
 include '../classes/dbh.classes.php';
-include '../classes/showProduct-contr.classes.php';
 include '../classes/showProduct.classes.php';
+include '../classes/showProduct-contr.classes.php';
+
 if(isset($_POST['submit'])){
 // echo '<pre>';
 //  var_dump($_FILES);
 // echo '</pre>';  
-$id=filter_var($_POST['id'],FILTER_SANITIZE_NUMBER_INT);
 $title=htmlspecialchars($_POST["title"],ENT_QUOTES,'UTF-8');
 $body=htmlspecialchars($_POST["body"],ENT_QUOTES,'UTF-8');
 $keyword1=htmlspecialchars($_POST["keyword1"],ENT_QUOTES,'UTF-8');
@@ -20,8 +20,13 @@ $thumbnail3=$_FILES['thumbnail3'];
 $thumbnail4=$_FILES['thumbnail4'];
 
 
-$newproduct=new ShowProductContr($id);
+$newproduct=new ShowProductContr();
 $newproduct->newProduct($title,$body,$thumbnail1,$keyword1,$thumbnail2,$keyword2,$thumbnail3,$keyword3,$thumbnail4,$keyword4,$is_featured);
+var_dump($newproduct);
+
+//$_SESSION['edit_post']='پست مورد نظر با موفقیت ثبت شد';
+
+//header("location:../manage/profile");
 
 
 
