@@ -1,14 +1,13 @@
 <?php
 
 class ShowProductContr extends ShowProduct{
-    private $postid;
+   // private $postid;
     private $allowedTypes = ['image/jpeg', 'image/png'];
     private $maxSize = 2 * 1024 * 1024; // 2MB
     private $uploadDir = 'uploads/';
 
-
-    public function __construct($postid){
-        $this->postid=$postid; 
+    public function __construct(){
+         
     }
     public function showProduct(){
         return $this->getProductInfo();
@@ -42,21 +41,25 @@ class ShowProductContr extends ShowProduct{
 
         return $uploadPath; // مسیر فایل ذخیره‌شده
     }
+    private function emptyInputCheck($prtitle,$prcontent){
+        $result='';
+        if( empty($prtitle) || empty($prcontent)){
+            $result=true;
+        }else{
+            $result=false;
+        }
+        return $result;
+    }
+    public function newProduct($prtitle,$prcontent,$prsrc1,$prkey1,$prsrc2,$prkey2,$prsrc3,$prkey3,$prsrc4,$prkey4,$feature){
 
-
-
-    protected function newProduct($prtitle,$prcontent,$prsrc1,$prkey1,$prsrc2,$prkey2,$prsrc3,$prkey3,$prsrc4,$prkey4,$feature){
-        
-
-
-
-
-
-
-
-
-
-
+        if($this->emptyInputCheck($prtitle,$prcontent)==true){
+            header("location: ../profilesettings.php?error=emptyinput");
+            exit();
+        }
+        if($this->upload($prsrc1)){
+            header("location: ../profilesettings.php?error=fileerror");
+            exit();
+        }
          $this->setNewProduct($prtitle,$prcontent,$prsrc1,$prkey1,$prsrc2,$prkey2,$prsrc3,$prkey3,$prsrc4,$prkey4,$feature);
     }
 }

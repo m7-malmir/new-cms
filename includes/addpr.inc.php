@@ -1,5 +1,7 @@
 <?php
 include '../classes/dbh.classes.php';
+include '../classes/showProduct-contr.classes.php';
+include '../classes/showProduct.classes.php';
 if(isset($_POST['submit'])){
 // echo '<pre>';
 //  var_dump($_FILES);
@@ -13,10 +15,13 @@ $keyword3=htmlspecialchars($_POST["keyword3"],ENT_QUOTES,'UTF-8');
 $keyword4=htmlspecialchars($_POST["keyword4"],ENT_QUOTES,'UTF-8');
 $is_featured=filter_var($_POST['is_featured'],FILTER_SANITIZE_NUMBER_INT);
 $thumbnail1=$_FILES['thumbnail1'];
-$thumbnail1=$_FILES['thumbnail2'];
-$thumbnail1=$_FILES['thumbnail3'];
-$thumbnail1=$_FILES['thumbnail4'];
+$thumbnail2=$_FILES['thumbnail2'];
+$thumbnail3=$_FILES['thumbnail3'];
+$thumbnail4=$_FILES['thumbnail4'];
 
+
+$newproduct=new ShowProductContr($id);
+$newproduct->newProduct($title,$body,$thumbnail1,$keyword1,$thumbnail2,$keyword2,$thumbnail3,$keyword3,$thumbnail4,$keyword4,$is_featured);
 
 
 
