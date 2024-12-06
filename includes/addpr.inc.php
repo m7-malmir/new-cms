@@ -24,9 +24,9 @@ $newproduct=new ShowProductContr();
 $newproduct->newProduct($title,$body,$thumbnail1,$keyword1,$thumbnail2,$keyword2,$thumbnail3,$keyword3,$thumbnail4,$keyword4,$is_featured);
 var_dump($newproduct);
 
-//$_SESSION['edit_post']='پست مورد نظر با موفقیت ثبت شد';
+$_SESSION['edit_post']='محصول مورد نظر با موفقیت ثبت شد';
 
-//header("location:../manage/profile");
+header("location:../manage/profile");
 
 
 

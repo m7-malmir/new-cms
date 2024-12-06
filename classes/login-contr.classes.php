@@ -14,6 +14,9 @@ class LoginContr extends Login{
             header("location: ../index.php?error=emptyinput");
             exit();
         }
+        if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            die('Invalid CSRF token.');
+        }
        $this->getUser($this->uid,$this->pwd);
      }
      private function emptyInput(){

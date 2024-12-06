@@ -1,4 +1,5 @@
 <?php  
+
     $users2   = 'users';
     $category='categories';
     $post='posts';

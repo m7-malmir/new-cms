@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['submit'])){
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     //grab link to data
     $uid=htmlspecialchars($_POST['uid'],ENT_QUOTES,'UTF-8');
@@ -16,6 +16,7 @@ if(isset($_POST['submit'])){
      $login->loginUser();
      //going to back to front page
        $_SESSION['succ-login']='ورود شما با موفقیت انجام شد';
+       
     header("location:../manage/profile");
 
 

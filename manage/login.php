@@ -17,7 +17,8 @@ require_once '../header.php';
             unset($_SESSION['wrong-pass']);
                 endif;
             ?>
-            <form  action="../includes/login.inc.php" method="post" class="contact__form">
+            <form  action="../includes/login.inc.php" method="POST" class="contact__form">
+                <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                 <div class="form__name">
                 <input type="text" name="uid" placeholder="نام کاربری" style="width:100%;">
                 </div><!--form__name-->

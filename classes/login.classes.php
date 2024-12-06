@@ -36,6 +36,9 @@ class Login extends Dbh{
                 session_start();
                 $_SESSION["userid"]=$user[0]["users_id"];
                 $_SESSION["useruid"]=$user[0]["users_uid"];
+                if (!isset($_SESSION['csrf_token'])) {
+                    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+                }
             }
                 $stmt=null;
         }

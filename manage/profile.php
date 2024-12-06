@@ -1,8 +1,7 @@
 <?php
 //include './up-header.php';
 include './header.php';
-
-if(isset($_SESSION["useruid"])){
+if(isset($_SESSION["useruid"] )){
 ?>
 <section class="dashboord">  
     <div class="dashboord__container"> 

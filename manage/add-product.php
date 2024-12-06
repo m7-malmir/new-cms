@@ -1,6 +1,6 @@
 <?php
 include './header.php';
-
+if(isset($_SESSION["useruid"] )){
 ?>
 <section class="sign-in"> 
     <div class="container-login">
@@ -78,5 +78,6 @@ include './header.php';
     </div>
 </section>
 <?php
+}
 include('../footer.php');
 ?>
