@@ -30,4 +30,5 @@ class ShowProductContr extends ShowProduct{
         }
          $this->setNewProduct($prtitle,$prcontent,$prsrc1,$prkey1,$prsrc2,$prkey2,$prsrc3,$prkey3,$prsrc4,$prkey4,$feature);
     }
+    
 }
